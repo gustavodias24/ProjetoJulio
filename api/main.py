@@ -10,6 +10,11 @@ col_task = db['task']
 app = Flask(__name__)
 
 
+@app.route("/")
+def index():
+    return jsonify({"msg": "Api funcionando"}), 200
+
+
 @app.route("/create")
 def createTask():
     body = request.get_json()
