@@ -1,6 +1,7 @@
 from pymongo import MongoClient
 from flask import Flask, request, jsonify
 from bson.objectid import ObjectId
+from flask_cors import CORS
 
 mongo_uri = "mongodb+srv://julio:233281@cluster0.tq8708d.mongodb.net/"
 
@@ -9,6 +10,7 @@ db = client['db']
 col_task = db['task']
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route("/")
